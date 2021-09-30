@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <FrameLayout
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="92dp"
+            android:layout_marginRight="92dp"
+            />
+
+        <ImageView
+            android:id="@+id/Image"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="18.32dp"
+            android:background="@drawable/video_01_unist"/>
+
+        <LinearLayout
+            android:id="@+id/rightside"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical"
+            android:layout_gravity="right
+"
+            >
+
+            <FrameLayout
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/video_02_blank_btn"
+                >
+
+                <Button
+                    android:id="@+id/QPI"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/video_03_qpi"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+
+                    android:layout_gravity="center"
+
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/white"
+                    android:indeterminateTintMode="src_atop"
+                    android:visibility="gone"
+                    />
+                <Button
+                    android:id="@+id/Restart"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+
+                    android:background="@drawable/video_04_restart"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/Wide_field"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/video_07_wide_field"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                />
+
+            <Button
+                android:id="@+id/Gallery"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/video_05_gallery"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                />
+
+
+            <Button
+                android:id="@+id/Exit"
+                android:layout_marginTop="25dp"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/video_06_exit"
+                android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>
