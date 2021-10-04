@@ -229,20 +229,21 @@ public class Video_1_VideoFragment extends Fragment implements TextureView.Surfa
     public void takeSnapshot(int i)
     {
         // get the snapshot image
-        Bitmap image = textureView.getBitmap(1080,720); // 여기를 raspi 카메라 reolution이랑 맞춰주면 좋음
+        Bitmap image = textureView.getBitmap(1014,760); // 여기를 raspi 카메라 reolution이랑 맞춰주면 좋음
 
-        // 하나는 계산용 하나는 갤러리용
-        String name = String.format("%04d.png",i);
-        Video_4_SaveImage.DPC_SAVE(getActivity().getContentResolver(), image, name, null); // 여기서 저장하는 java 씀
-
-        SimpleDateFormat date = new SimpleDateFormat("yyMMdd_hh:mm:ss");
-        String name2 = "DPC_" + date.format(new Date()) + ".png";
-        Video_4_SaveImage.DPC_SAVE(getActivity().getContentResolver(), image, name2, null); // 여기서 저장하는 java 씀
+//        // 계산용 저장
+//        String name = String.format("%04d.png",i);
+//        Video_4_SaveImage.DPC_SAVE(getActivity().getContentResolver(), image, name, null);
+//
+//        // 갤러리용 저장
+//        SimpleDateFormat date = new SimpleDateFormat("yyMMdd_hh:mm:ss");
+//        String name2 = "DPC_" + date.format(new Date()) + ".png";
+//        Video_4_SaveImage.DPC_SAVE(getActivity().getContentResolver(), image, name2, null);
 
         // 파이썬 돌리는거에 응용해보자
         bitmap_string_image = getStringImage(image); // 비트맵 이미지를 보내기 위해 string으로
 
-        PyObject python_code = python_start.getModule("01_Save_four_image");
+        PyObject python_code = python_start.getModule("01_Save_four_image"); // 안드로이드 자체에 grayscale로 바꿔서 저장하는 코드
         PyObject return_value = python_code.callAttr("main", bitmap_string_image, i); // 이걸 파라미터로 던진다
 
         // 그냥 잘 되었는지 확인용
